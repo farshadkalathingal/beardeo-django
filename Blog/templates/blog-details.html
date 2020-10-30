@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}beardeo - Blog{% endblock %}
+
+{% block content %}
+<section class="intro">
+    <div class="intro-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h1 class="brand-heading">beardeo.</h1>
+            <p class="intro-text">
+              blog
+            </p>
+            <a href="#about" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="page-sample">
+        <div class="container content-section text-center">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 mb-5" >
+                    <h2>{{ object.title }}</h2>
+                    <img src="{{ object.thumbnail.url }}">
+                </div>
+                <div class="col-lg-8 offset-lg-2 text-left">
+                    {% autoescape off %}
+                        {{object.content}}
+                    {% endautoescape %}
+                </div>
+            </div>
+            <div class="navigation-area">
+              <div class="row">
+                  
+                  <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                    {% if previous_post %}
+                      <div class="thumb">
+                          <a href="{{ previous_post.get_absolute_url }}"><img class="img-fluid" src="{{ previous_post.thumbnail.url }}" alt=""></a>
+                      </div>
+                      <div class="arrow">
+                          <a href="{{ previous_post.get_absolute_url }}"><span class="lnr text-white lnr-arrow-left"></span></a>
+                      </div>
+                      <div class="detials">
+                          <p>Prev Post</p>
+                          <a href="{{ previous_post.get_absolute_url }}">
+                              <h4>{{ previous_post.title }}</h4>
+                          </a>
+                      </div>
+                      {% endif %}
+                  </div>
+                  
+                  <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                    {% if next_post %}
+                      <div class="detials">
+                          <p>Next Post</p>
+                          <a href="{{ next_post.get_absolute_url }}">
+                              <h4>{{ next_post.title }}</h4>
+                          </a>
+                      </div>
+                      <div class="arrow">
+                          <a href="{{ next_post.get_absolute_url }}"><span class="lnr text-white lnr-arrow-right"></span></a>
+                      </div>
+                      <div class="thumb">
+                          <a href="{{ next_post.get_absolute_url }}"><img class="img-fluid" src="{{ next_post.thumbnail.url }}" alt=""></a>
+                      </div>
+                      {% endif %}
+                  </div>
+                  
+              </div>
+          </div>
+        </div>
+    </section>
+
+  {% endblock %}
+  {% block script %}
+<script>
+    $(document).ready(function() {
+        $( ".navbar-nav li:nth-child(2)" ).addClass('active');
+    });
+</script>
+{% endblock %}

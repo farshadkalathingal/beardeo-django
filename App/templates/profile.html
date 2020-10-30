@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{object.user.username|title}}{% endblock %}
+{% block content %}
+
+
+<!-- Intro Header -->
+
+
+<!--================ Start Book a Trip Area =================-->
+<section id="about"  style="background-color: #9c9d9e;">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-11 text-center my-5">
+                <div class="card profile ">
+                    <div class="profile-pic" style="background-color: {{object.color}};">
+                        {% if object.avatar %}
+                            <img src="{{object.avatar.url}}" alt="{{object.user.username}}" class="img-fluid">
+                        {% else %}
+                            <span>{{object.user.username.0}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="profile-card__cnt">
+                        <h3>{{object.user.username|title}}</h3>
+                        <h6>{{object.position|title}}</h6>
+                        <p>{{object.description}}</p>
+                    
+
+                    <div class="profile-card-inf">
+                        <div class="profile-card-inf__item">
+                          <div class="profile-card-inf__title">1598</div>
+                          <div class="profile-card-inf__txt">Followers</div>
+                        </div>
+                
+                        <div class="profile-card-inf__item">
+                          <div class="profile-card-inf__title">65</div>
+                          <div class="profile-card-inf__txt">Following</div>
+                        </div>
+                
+                        <div class="profile-card-inf__item">
+                          <div class="profile-card-inf__title">{{ object.post }}</div>
+                          <div class="profile-card-inf__txt">Posts</div>
+                        </div>
+                
+                      </div>
+
+                      <div class="profile-card-social">
+                        <a href="#" class="profile-card-social__item facebook" target="_blank">
+                          <span class="icon-font">
+                              
+                          </span>
+                        </a>
+                
+                        <a href="#" class="profile-card-social__item twitter" target="_blank">
+                          <span class="icon-font">
+                              
+                          </span>
+                        </a>
+                
+                        <a href="#" class="profile-card-social__item instagram" target="_blank">
+                          <span class="icon-font">
+                              
+                          </span>
+                        </a>
+                
+                      </div>
+                
+                      <div class="profile-card-ctr">
+                        <input type="button" class="primary-btn text-uppercase mt-3" value="Edit Profile" />
+                      </div>
+                    </div>
+                </div>
+                    
+                    
+                </div>   
+            </div>
+        </div>
+    </div>	
+</section>
+<!--================ End Book a Trip Area =================-->
+
+{% endblock %}
+{% block script %}
+<script>
+    $(document).ready(function() {
+		$( ".nav li:nth-child(5)" ).addClass('active');
+		$( ".submenu li").removeClass('active');
+    });
+</script>
+{% endblock %}

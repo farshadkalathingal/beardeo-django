@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}beardeo{% endblock %}
+
+{% block content %}
+	<!-- Intro Header -->
+	<section class="intro">
+		<div class="intro-body">
+			<div class="container text-center">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<h1 class="brand-heading">beardeo.</h1>
+						<p class="intro-text">
+							respect the beard.
+						</p>
+						<a href="#about" class="btn btn-circle page-scroll">
+						<i class="fa fa-angle-double-down animated"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about" style="background-color: #000;">
+		<div class="container content-section text-center text-align shot">
+			<div class="row ">
+				<div class="col-lg-10 offset-lg-1">
+					<h2	h2 style="color: #fff;">KEEP ON GROWING</h2>
+				
+					<div class="about__data">
+						<p style="color: #ffffee; padding: 5%;">It seems that when we think about the beard we have to consider <b><i>Caelan Guackalay aka</i></b> that guy with a beard in Fossil Ridge. He has a giant beard and it is unusual because he is in high school and he also has a mustache.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="bgimg-1">
+		<p class="text">Fear The Beard.</p>
+	</div>
+
+	<section id="recommended">
+		<div class="container-fluid content-section text-center">
+			<div class="row ">
+				<div class="col-lg-6 offset-lg-3">
+					<h2 style="padding: 5%;">RECOMMENDED READING</h2>
+					<div class="recommended__content">
+						<h4>BEARD</h4>
+						<div class="">
+							<div class="list-group">
+								{% for post in posts %}
+								<a href="{{ post.get_absolute_url }}" style="font-size: 15px;" class="list-group-item list-group-item-action">{{ post.title }}</a>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="bgimg-2">
+		<p class="text">With Great Beard Comes Great Responsibility.</p>
+	</div>
+	
+	<!-- Contact Section -->
+	<section id="author">
+		<div class="container-fluid content-section text-center">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<h2>Author's Message</h2>
+					<div class="author__content">
+						<p>A beard is the collection of hair that grows on the chin and cheeks of humans and some non-human animals. In humans, usually only pubescent or adult males are able to grow beards. From an evolutionary viewpoint the beard is a part of the broader category of androgenic hair. It is a vestigial trait from a time when humans had hair on their face and entire body like the hair on gorillas. The evolutionary loss of hair is pronounced in some populations such as indigenous Americans and some east Asian populations, who have less facial hair, whereas people of European or South Asian ancestry and the Ainu have more facial hair.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="bgimg-3">
+		<p class="text">Grow It With Care.<br> Wear It With Pride.</p>
+	</div>
+	<!-- Footer -->
+	<section id="subscribe">
+		<div class="container-fluid content-section text-center ">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<h3 class="animate-box"><label for="email">Join The beardeo Family</label></h3>
+					<p style="font-size:15px; padding: 5%;">We share tips and education for everything grooming & self improvement. In addition to that we deliver updates for company events.</p>
+					<form  name="tipsform"  id="tips" action="." method="POST">
+						{% csrf_token %}
+						<div class="form">
+						<i class="fa fa-paper-plane fa-fw"></i>
+						<input type="email" id="email" name="email" placeholder=" Your E-mail Address *" required>
+						<input type="submit" id="click" class="clearfix btn" value="Subscribe">
+						<!--<button class="clearfix btn" type="submit" id="click" ngClick="Submit" >Send</button>-->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="bgimg-4">
+		<p class="text">Grow What Your Father Gave To You.</p>
+	</div>
+
+	<section id="faqs">
+		<div class="container-fluid content-section text-center ">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<h3 class="animate-box">FAQs</h3>
+
+					<div class="faqs__content">
+						<button class="accordion">Is Beard Care a real thing?</button>
+						<div class="panel">
+							<p>Yes! Beard Care is very real. Men have beards - Beards need care. </p>
+						</div>
+
+						<button class="accordion">Can Beard Oil stop my skin from being itchy?</button>
+						<div class="panel">
+							<p>Yes! You can use any of our All Natural, Man Made products to help with itchy skin. Beard Oils and Beard Balms help nourish the skin and relieves itching in addition to making your beard awesome.</p>
+						</div>
+
+						<button class="accordion">Beards make you look old.</button>
+						<div class="panel">
+							<p>I agree. People misjudge my age by 10 years when I grow one. What they also seem to do is assume that I know what I’m talking about or that I’m qualified to give them advice. In these situations, I find that pensively tugging on your beard and waiting for them to answer their own questions works best. You’ll look like a fucking genius.</p>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+{% block script %}
+<script>
+    $(document).ready(function() {
+		$( ".navbar-nav li:nth-child(1)" ).addClass('active');
+		$( ".submenu li").removeClass('active');
+    });
+</script>
+{% endblock %}

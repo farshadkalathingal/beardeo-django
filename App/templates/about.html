@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block ttile %}beardeo - About{% endblock %}
+
+{% block content %}
+
+<!-- Intro Header -->
+<section class="intro">
+	<div class="intro-body">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<h1 class="brand-heading">About</h1>
+					<p class="intro-text">
+						Beardeo.
+					</p>
+					<a href="#page-sample" class="btn btn-circle page-scroll">
+					<i class="fa fa-angle-double-down animated"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Page Sample Section -->
+<section id="page-sample">
+	<div class="container content-section text-left text-align">
+		<div class="row text-center">
+			<div class="col-lg-8 offset-lg-2">
+				<h2>beardeo.</h2>
+			
+				<div style="padding: 5%;">
+					<h4>A Man Without Beard is Like Lion Without Mane.</h4>
+					<p> Guys, I'm Farshad Kalathingal, the Founder of <a href="index.html"><i>BEARDEO</i></b></a> Website. I created this website for the people who love to grow their beard.
+					</p>
+					<p> In this website I provide lot of information on growing Beard and its Caring.</p>
+					<p> I created this website, bcoz I faced lot of problems on growing my beard for the first time. So I decided to create
+						a website including information about Beard and I believe it will help you to grow your beard.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+{% block script %}
+<script>
+    $(document).ready(function() {
+        $( ".navbar-nav li:nth-child(3)" ).addClass('active');
+    });
+</script>
+{% endblock %}
